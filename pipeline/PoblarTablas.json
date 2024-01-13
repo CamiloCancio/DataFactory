@@ -899,7 +899,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "listingazure",
 						"type": "DatasetReference"
 					}
 				]

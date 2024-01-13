@@ -1,0 +1,92 @@
+{
+	"name": "Indicadores",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LinkedServiceAdventureWorks",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "IdVenta",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FechaVenta",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "ClienteId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Subtotal",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "TotalVencido",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "CantidadOrdenada",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProductoId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "PrecioUnitario",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "LineTotal",
+				"type": "money",
+				"precision": 19,
+				"scale": 4
+			},
+			{
+				"name": "PrimerNombre",
+				"type": "varchar"
+			},
+			{
+				"name": "SegundoNombre",
+				"type": "varchar"
+			},
+			{
+				"name": "Apellido",
+				"type": "varchar"
+			},
+			{
+				"name": "NombreProducto",
+				"type": "varchar"
+			},
+			{
+				"name": "CategoriaProductoId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Categoria",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Indicadores"
+		}
+	}
+}

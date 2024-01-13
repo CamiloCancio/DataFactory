@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "flujo_indicadores",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -13,7 +13,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable2",
+						"referenceName": "salesorderdatail",
 						"type": "DatasetReference"
 					},
 					"name": "SalesOrderDetail"
@@ -42,7 +42,11 @@
 			],
 			"sinks": [
 				{
-					"name": "sink1"
+					"dataset": {
+						"referenceName": "Indicadores",
+						"type": "DatasetReference"
+					},
+					"name": "indicadoressink"
 				}
 			],
 			"transformations": [
@@ -192,7 +196,6 @@
 				"          PrecioUnitario = UnitPrice,",
 				"          LineTotal,",
 				"          PrimerNombre = FirstName,",
-				"          SegundoNombre = LastName,",
 				"          Apellido = LastName,",
 				"          NombreProducto = product@Name,",
 				"          CategoriaProductoId = product@ProductCategoryID,",
@@ -202,8 +205,47 @@
 				"     skipDuplicateMapOutputs: true) ~> select1",
 				"select1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     input(",
+				"          IdVenta as integer,",
+				"          FechaVenta as timestamp,",
+				"          ClienteId as integer,",
+				"          Subtotal as decimal(19,4),",
+				"          TotalVencido as decimal(19,4),",
+				"          CantidadOrdenada as integer,",
+				"          ProductoId as integer,",
+				"          PrecioUnitario as decimal(19,4),",
+				"          LineTotal as decimal(19,4),",
+				"          PrimerNombre as string,",
+				"          SegundoNombre as string,",
+				"          Apellido as string,",
+				"          NombreProducto as string,",
+				"          CategoriaProductoId as integer,",
+				"          Categoria as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          IdVenta,",
+				"          FechaVenta,",
+				"          ClienteId,",
+				"          Subtotal,",
+				"          TotalVencido,",
+				"          CantidadOrdenada,",
+				"          ProductoId,",
+				"          PrecioUnitario,",
+				"          LineTotal,",
+				"          PrimerNombre,",
+				"          Apellido,",
+				"          NombreProducto,",
+				"          CategoriaProductoId,",
+				"          Categoria",
+				"     )) ~> indicadoressink"
 			]
 		}
 	}
