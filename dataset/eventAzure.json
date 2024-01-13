@@ -1,0 +1,45 @@
+{
+	"name": "eventAzure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "eventid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "venueid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "catid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "dateid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "eventname",
+				"type": "varchar"
+			},
+			{
+				"name": "starttime",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "event"
+		}
+	}
+}

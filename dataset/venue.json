@@ -1,0 +1,28 @@
+{
+	"name": "venue",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "venue_pipe.txt",
+				"container": "containerfreecancio"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "1|Toyota Park|Bridgeview|IL|0",
+				"type": "String"
+			}
+		]
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"name": "AzureSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "listid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sellerid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "eventid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "dateid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "numtickets",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "priceperticket",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "totalprice",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "listtime",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "listing"
+		}
+	}
+}

@@ -1,0 +1,68 @@
+{
+	"name": "VentasAzure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "salesid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "listid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sellerid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "buyerid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "eventid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "dateid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "qtysold",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "pricepaid",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "commission",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 2
+			},
+			{
+				"name": "saletime",
+				"type": "timestamp"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "sales"
+		}
+	}
+}

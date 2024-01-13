@@ -1,0 +1,39 @@
+{
+	"name": "venueazure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "venueid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "venuename",
+				"type": "varchar"
+			},
+			{
+				"name": "venuecity",
+				"type": "varchar"
+			},
+			{
+				"name": "venuestate",
+				"type": "char"
+			},
+			{
+				"name": "venueseats",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "venue"
+		}
+	}
+}

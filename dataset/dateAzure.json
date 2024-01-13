@@ -1,0 +1,52 @@
+{
+	"name": "dateAzure",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "dateid",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "caldate",
+				"type": "date"
+			},
+			{
+				"name": "day",
+				"type": "char"
+			},
+			{
+				"name": "week",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "month",
+				"type": "char"
+			},
+			{
+				"name": "qtr",
+				"type": "char"
+			},
+			{
+				"name": "year",
+				"type": "smallint",
+				"precision": 5
+			},
+			{
+				"name": "holiday",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "date"
+		}
+	}
+}
