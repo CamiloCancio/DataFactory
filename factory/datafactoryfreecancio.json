@@ -1,0 +1,9 @@
+{
+	"name": "datafactoryfreecancio",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "bcb7f730-ece7-4ef5-8c34-4b3087360500",
+		"tenantId": "988c9309-3d87-4c3f-b1fa-f543ab44a945"
+	}
+}
