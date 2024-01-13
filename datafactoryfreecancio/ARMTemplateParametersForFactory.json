@@ -13,6 +13,9 @@
 		},
 		"AzureSqlDatabaseLikedServiceFree_connectionString": {
 			"value": ""
+		},
+		"LinkedServiceAdventureWorks_connectionString": {
+			"value": ""
 		}
 	}
 }

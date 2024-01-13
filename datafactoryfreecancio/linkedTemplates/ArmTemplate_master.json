@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Cadena protegida para \"connectionString\"de \"AzureSqlDatabaseLikedServiceFree\""
 		},
+		"LinkedServiceAdventureWorks_connectionString": {
+			"type": "secureString",
+			"metadata": "Cadena protegida para \"connectionString\"de \"LinkedServiceAdventureWorks\""
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI de la cuenta de almacenamiento que contiene las plantillas de ARM vinculadas."
@@ -54,10 +58,33 @@
 					},
 					"AzureSqlDatabaseLikedServiceFree_connectionString": {
 						"value": "[parameters('AzureSqlDatabaseLikedServiceFree_connectionString')]"
+					},
+					"LinkedServiceAdventureWorks_connectionString": {
+						"value": "[parameters('LinkedServiceAdventureWorks_connectionString')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "datafactoryfreecancio_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'datafactoryfreecancio_ArmTemplate_0')]"
+			]
 		}
 	]
 }
