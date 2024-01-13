@@ -1,0 +1,28 @@
+{
+	"name": "Usuarios_txt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "allusers_pipe.txt",
+				"container": "containerfreecancio"
+			},
+			"columnDelimiter": "|",
+			"escapeChar": "\\",
+			"firstRowAsHeader": false,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "1|JSG99FHE|Rafael|Taylor|Kent|WA|Etiam.laoreet.libero@sodalesMaurisblandit.edu|(664) 602-4412|TRUE|TRUE||FALSE|TRUE|||TRUE|FALSE|TRUE",
+				"type": "String"
+			}
+		]
+	}
+}

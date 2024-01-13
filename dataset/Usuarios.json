@@ -1,0 +1,90 @@
+{
+	"name": "Usuarios",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabaseLikedServiceFree",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "userid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "username",
+				"type": "char"
+			},
+			{
+				"name": "firstname",
+				"type": "varchar"
+			},
+			{
+				"name": "lastname",
+				"type": "varchar"
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			},
+			{
+				"name": "state",
+				"type": "char"
+			},
+			{
+				"name": "email",
+				"type": "varchar"
+			},
+			{
+				"name": "phone",
+				"type": "char"
+			},
+			{
+				"name": "likesports",
+				"type": "varchar"
+			},
+			{
+				"name": "liketheatre",
+				"type": "varchar"
+			},
+			{
+				"name": "likeconcerts",
+				"type": "varchar"
+			},
+			{
+				"name": "likejazz",
+				"type": "varchar"
+			},
+			{
+				"name": "likeclassical",
+				"type": "varchar"
+			},
+			{
+				"name": "likeopera",
+				"type": "varchar"
+			},
+			{
+				"name": "likerock",
+				"type": "varchar"
+			},
+			{
+				"name": "likevegas",
+				"type": "varchar"
+			},
+			{
+				"name": "likebroadway",
+				"type": "varchar"
+			},
+			{
+				"name": "likemusicals",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "users"
+		}
+	}
+}
